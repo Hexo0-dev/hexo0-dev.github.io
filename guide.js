@@ -2,8 +2,6 @@
 const help=document.querySelector('a[href="/segedlet"]');if(!help)return;
 const guide=document.createElement('main');guide.className='local-guide';guide.hidden=true;guide.innerHTML=`
 <article class="local-guide-card">
- <img class="local-guide-seal" src="assets/btk.seepd.hu/los_santos_91aa4398.webp" alt="Los Santos címere">
- <h1>BÜNTETŐ TÖRVÉNYKÖNYV - LOS SANTOS</h1>
  <h2>Maximum büntetésre vonatkozó szabályok</h2><p><b>Max börtönidő:</b> <em>120 Perc</em><br><b>Max bírság:</b> <em>5.000.000 $</em></p>
  <h2>Enyhítő körülmények</h2><p><b>[20-40% ajánlott]</b> Büntetlen előélet (MDC ellenőrzése minden esetben szükséges)<br><b>[10-20% ajánlott]</b> Hatóságokkal történő együttműködés<br><b>[50% ajánlott]</b> Kényszer hatására követte el a bűncselekményt<br><b>[20-30% ajánlott]</b> Elkövető önfeljelentése (Különösen, ha ennek folytán vált lehetővé a bűncselekmény felderítése, vagy azt jelentős mértékben elősegítette)<br><b>[20-30% ajánlott]</b> A bűnösségre is kiterjedő beismerő vallomás, illetve a részbeni beismerés. Nagyobb a nyomatéka, ha a beismerés segíti a felderítést. Tettenérés esetén csak a bűnösség elismerésének és a megbánás lehet enyhítő körülmény.</p>
 </article>`;
