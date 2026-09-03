@@ -12,7 +12,7 @@ const guide=document.createElement('main');guide.className='local-guide';guide.h
   <li>10 hatályon kívüli tétel</li>
   <li>Rövidítés, megnevezés, óvadék, bírság, börtön és leírás átmásolva</li>
  </ul>
- <h2>2. SeePD-s javítások</h2>
+ <h2>2. Rise javítások</h2>
  <ul>
   <li><code>ZKHF</code> frissítve <code>ZKTÉ</code> kódra
    <ul><li>Bírság: 100 000–200 000 Ft</li><li>Börtön: 60 perc</li><li>A hiányzó leírás is bekerült</li></ul>
@@ -48,7 +48,7 @@ const guide=document.createElement('main');guide.className='local-guide';guide.h
   <li>A bűnrészesi 50%-os csökkentés és a mennyiségi szorzó megmaradt.</li>
  </ul>
  <h2>6. Eredeti büntetések</h2>
- <p>A táblázatban meghagytam a SeePD eredeti büntetéseit. Öt forrástétel 120 percnél magasabb:</p>
+ <p>A táblázatban meghagytam a Rise eredeti büntetéseit. Öt forrástétel 120 percnél magasabb:</p>
  <ul>
   <li><code>EKHSZSZ</code> – 130 perc</li>
   <li><code>GYKH</code> – 180 perc</li>
@@ -64,12 +64,12 @@ const guide=document.createElement('main');guide.className='local-guide';guide.h
   <li><code>5304fae</code> – BTK vádtételek frissítése</li>
   <li><code>4c7854c</code> – Összetett vádtételek keresése</li>
   <li><code>edc1f17</code> – Találati lista bővítése</li>
-  <li><code>d119173</code> – SeePD-adatok szinkronizálása</li>
+  <li><code>d119173</code> – Rise-adatok szinkronizálása</li>
   <li><code>26c09fe</code> – Bírság- és börtönmaximum beállítása</li>
  </ul>
 </article>`;
 document.body.appendChild(guide);
-const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const textNodes=[];while(walker.nextNode())if(!['SCRIPT','STYLE'].includes(walker.currentNode.parentElement?.tagName))textNodes.push(walker.currentNode);textNodes.forEach(node=>{node.textContent=node.textContent.replace(/Blaine County Sheriff's Office/gi,"Sheriff's Office").replace(/Blaine County Kormánya/gi,'Kormánya').replace(/\s*&\s*Blaine County/gi,'').replace(/Blaine County/gi,'').replace(/ {2,}/g,' ')});
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const textNodes=[];while(walker.nextNode())if(!['SCRIPT','STYLE'].includes(walker.currentNode.parentElement?.tagName))textNodes.push(walker.currentNode);textNodes.forEach(node=>{node.textContent=node.textContent.replace(/SeePD/gi,'Rise').replace(/SeeRPG/gi,'Rise').replace(/See City/gi,'Rise').replace(/Blaine County Sheriff's Office/gi,"Sheriff's Office").replace(/Blaine County Kormánya/gi,'Kormánya').replace(/\s*&\s*Blaine County/gi,'').replace(/Blaine County/gi,'').replace(/ {2,}/g,' ')});
 const show=()=>{guide.hidden=false;document.body.classList.add('guide-open');if(!location.pathname.endsWith('/Frissítések'))history.pushState({guide:true},'', '/Frissítések')};
 const hide=()=>{guide.hidden=true;document.body.classList.remove('guide-open');if(location.pathname.endsWith('/Frissítések'))history.pushState({},'', '/')};
 help.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();show()},true);
